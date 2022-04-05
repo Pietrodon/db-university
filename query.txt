@@ -28,15 +28,15 @@ SELEZIONARE TUTTI I CORSI DEL PRIMO SEMESTRE DI QUALSIASI CORSO DI LAUREA
 
 SELECT * 
 FROM `courses` 
-WHERE `period` = "I semestre" AND `year` ="1"
+WHERE `period` = "I semestre" AND `year` = "1"
 
 QUERY 5 
 
 SELEZIONARE TUTTI GLI APPELLI CHE AVVENGONO NEL POMERIGGIO (DOPO LE 14) DEL 20/06/2020
 
-SELECT * 
-FROM `exams`
-WHERE `date` = "2020-06-20" AND `hour` LIKE "14%"
+SELECT *
+FROM `exams` 
+WHERE `date` = "2020-06-20" AND `hour` > "14:00:00"
 
 QUERY 6
 
@@ -44,7 +44,7 @@ SELEZIONARE TUTTI I CORSI DI LAUREA MAGISTRALE
 
 SELECT * 
 FROM `degrees`
-WHERE `level` ="magistrale"
+WHERE `level` = "magistrale"
 
 QUERY 7 
 
