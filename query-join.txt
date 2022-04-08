@@ -60,6 +60,18 @@ QUERY 6
 
 Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
+SELECT `teachers`.`name`,`teachers`.`surname`,`course_teacher`.`teacher_id`,`courses`.`degree_id`,`degrees`.`department_id`,`departments`.`name`
+FROM `teachers`
+INNER JOIN `course_teacher`
+ON `teachers`.`id` = `course_teacher`.`teacher_id`
+INNER JOIN `courses`
+ON `course_teacher`.`course_id` = `courses`.`degree_id`
+INNER JOIN `degrees`
+ON `courses`.`degree_id`= `degrees`.`department_id`
+INNER JOIN `departments`
+ON `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`name` = 'dipartimento di matematica'
+
 QUERY 7
 
 BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per
